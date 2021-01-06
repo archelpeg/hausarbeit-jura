@@ -36,6 +36,30 @@ Dokumentation. Die Originaldateien sind unter dem angegebenen Link zu finden.
 Dies ersetzt nicht biblatex-jura2, es soll zeigen, wie dieser biblatex-Style mit
 der Dokumentklasse hausarbeit-jura2 eingesetzt werden kann.
 
+`Microtype` wird in der .tex-Datei gesetzt, damit man auch mit XeTeX kompilieren
+kann, ohne die Klasse lokal zu ändern. Das muss noch manuell auskommentiert
+werden, wenn XeTex benutzt werden soll, es ist noch nicht automatisiert.
+
+In die .tex-Datei sind viele Änderungsmöglichkeiten in die Präambel eingepflegt,
+die es vor allem Anfängern ermöglichen sollen, einen einfacheren Zugang zu LaTeX
+zu finden und das Dokument ihren Anforderungen gemäß anzupassen. 
+
+Probleme:
+* Für LuaLaTex muss die Klasse `jurabook` lokal an vier Stellen geändert werden.
+    * In `jurabook.cls` jeweils inkompatibles Zeichen mit `§` ersetzen, Zeilen:
+	    * 1087
+	    * 1097
+	    * 1692
+	    * 1705
+    * Eigentlich ist es auch ein §, wird aber nicht als solches erkannt.
+    * Die Datei muss danach gespeichert werden.
+* Die Änderung des Zeilenabstandes funktioniert, ist aber nicht schön umgesetzt.
+  Es wäre schön, wenn sich das besser umsetzen ließe, vor allem auch, wenn für
+  das Inhaltsverzeichnis und die Bibliographie und den Hauptteil ein
+  unterschiedlicher Zeilenabstand gewählt werden könnte.
+* Wenn die Bibliographie vor den Hauptteil gesetzt wird, muss die Seitenzahl
+  noch manuell gesetzt werden.
+
 
 
 ### [2.1.0] -- 2020-08-06
