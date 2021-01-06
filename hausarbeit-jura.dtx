@@ -85,8 +85,8 @@ universities]
 	 	{\usepackage[scaled=0.85]{beramono}}{}
 	}
 	{\usepackage{lmodern}}
-\IfFileExists{microtype.sty}
-	{\usepackage{microtype}}{}
+% \IfFileExists{microtype.sty} % muss das in der .tex-Datei dann verwendet werden?
+% 	{\usepackage{microtype}}{} % muss das in der .tex-Datei dann verwendet werden?
 \usepackage{textcomp}
 \usepackage{upquote}
 \usepackage{array,booktabs,tabularx}
@@ -731,8 +731,8 @@ universities (ao, ms)]
 \RequirePackage[autostyle]{csquotes}
 \defineshorthand{"`}{\openautoquote}
 \defineshorthand{"'}{\closeautoquote}
-\RequirePackage[final,tracking=smallcaps,expansion=alltext,protrusion=true]{microtype}%
-\SetTracking{encoding=*,shape=sc}{50}%
+% \RequirePackage[final,tracking=smallcaps,expansion=alltext,protrusion=true]{microtype}%
+% \SetTracking{encoding=*,shape=sc}{50}%
 \if@headline
    \renewcommand{\SetJuboPagestyle}{%
       \pagestyle{fancy}%
@@ -1570,7 +1570,22 @@ universities (ao, ms)]
 %% footnotes nun unter dem bottom float (sonst können sie manchmal zu weit oben sein)
 \usepackage[bottom]{footmisc}
 
+
+%% Nur verwenden, wenn mit \hologo{pdfLaTeX} oder \hologo{LuaLaTeX} kompiliert wird, da 
+%% \hologo{XeLaTeX} microtype nicht unterstützt.
+%% (Es wäre schöner, das hier mit if/then umzusetzen.)
+\usepackage[final,tracking=smallcaps,expansion=alltext,protrusion=true]{microtype}%
+\SetTracking{encoding=*,shape=sc}{50}%
+
+
+
+
+
+
 %% kann man setzen, falls noch nicht in Klasse geändert
+%% Nur verwenden, wenn mit \hologo{LuaLaTeX} oder \hologo{XeLaTeX} kompiliert wird, da 
+%% \hologo{pdfLaTeX} nur einige wenige Schriftarten unterstützt.
+%% https://en.wikibooks.org/wiki/LaTeX/Fonts#Changing_fonts_in_latex_and_pdflatex
 % \setmainfont{Arial} % normalerweise Times New Roman
 % \renewcommand{\footnotesize}{\fontsize{10pt}{10pt}\selectfont} % normalerweise ist es 9pt; der erste Wert ist die Größe, der zweite der Abstand
 
@@ -1765,42 +1780,42 @@ universities (ao, ms)]
 \section{Abschnitt}
 \blindtext[4]
 
-\footcite[33]{larenz:methoden}
+%% Von dem Stylepaket biblatex-jura2 übernommen, für Erklärungen in dessen Dokumentation schauen.
+%% https://ctan.org/pkg/biblatex-jura2
 
-\footcite[§~7 Rn.~7]{maurer:allgverwr}
+Erste Fußnote.\footcite[33]{larenz:methoden}
 
-\footcite[Rn.~204]{medicus:br}
+Zweite Fußnote. \footcite[§~7 Rn.~7]{maurer:allgverwr}
 
+Dritte Fußnote. \footcite[Rn.~204]{medicus:br}
 
-\footcite{stamm:verzinsung}
+Vierte Fußnote. \footcite{stamm:verzinsung}
 
+Fünfte Fußnote. \footcite[3]{stamm:zweiter}
 
-\footcite[3]{stamm:zweiter}
+Sechste Fußnote. \footcite[vgl.][517]{gehrlein:vollstreckung}
 
+Siebte Fußnote. \footcite[(Ellenberger)§~119 Rn.~4]{palandt}
 
-\footcite[vgl.][517]{gehrlein:vollstreckung}
+Achte Fußnote. \footnote{\cite[(Flechtner)§~2059 BGB Rn.~1]{erbr}; siehe auch \cite[(Kindler)Vorbem. §§~1--7 (Kaufmannsbegriff) Rn.~3]{ebjs1}.}
 
-\footcite[(Ellenberger)§~119 Rn.~4]{palandt}
+Neunte Fußnote. \footnote{vgl. \cite[Schmidt-Aßmann][Art.~19 Abs.~4 Rn.~36]{maunzduerig}; a.\,A. \cite[Diemer][§~151 Rn.~2]{kkstpo}.}
 
-\footnote{\cite[(Flechtner)§~2059 BGB Rn.~1]{erbr}; siehe auch \cite[(Kindler)Vorbem. §§~1--7 (Kaufmannsbegriff) Rn.~3]{ebjs1}.}
+Zehnte Fußnote. \footcite[Matusche-Beckmann][§~5 Rn.~14]{hdbversr}
 
-\footnote{vgl. \cite[Schmidt-Aßmann][Art.~19 Abs.~4 Rn.~36]{maunzduerig}; a.\,A. \cite[Diemer][§~151 Rn.~2]{kkstpo}.}
+Elfte Fußnote. \footcite[(Matusche-Beckmann)§~5 Rn.~14 (falsch zitiert)]{hdbversr}
 
-\footcite[Matusche-Beckmann][§~5 Rn.~14]{hdbversr}
+Zwölfte Fußnote. \footnote{\cite[(Bearbeiter)§~433 Rn.~23]{staudinger}; siehe auch \cite[(Bearbeiter)§~123 Rn.~12]{muekobgb}.}
 
-\footcite[(Matusche-Beckmann)§~5 Rn.~14 (falsch zitiert)]{hdbversr}
+Dreizehnte Fußnote. \footnote{Hentschel/\emph{König}/Dauer, § 1 StVG Rn. 1.}
 
-\footnote{\cite[(Bearbeiter)§~433 Rn.~23]{staudinger}; siehe auch \cite[(Bearbeiter)§~123 Rn.~12]{muekobgb}.}
+Vierzehnte Fußnote. \footcite[Rn. 3]{viiizr255.17}
 
-\footnote{Hentschel/\emph{König}/Dauer, § 1 StVG Rn. 1.}
+Fünfzehnte Fußnote. \footcite[Rn. 15]{1str346.18}
 
-\footcite[Rn. 3]{viiizr255.17}
+Sechsehnte Fußnote. \footcite[3535]{1str346.18.2}
 
-\footcite[Rn. 15]{1str346.18}
-
-\footcite[3535]{1str346.18.2}
-
-\footnote{\cite[56]{laack:infra}; siehe auch \cite[401]{beckemper:unvernunft}.}
+Siebzehnte Fußnote. \footnote{\cite[56]{laack:infra}; siehe auch \cite[401]{beckemper:unvernunft}.}
 
 
 

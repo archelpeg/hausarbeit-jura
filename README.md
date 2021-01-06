@@ -26,6 +26,14 @@ Stable versions are always uploaded to CTAN. You'll find the most recent develop
 https://github.com/sieversMartin/hausarbeit-jura
 
 
+Die .bib-Datei ist von [biblatex-jura2](https://ctan.org/pkg/biblatex-jura2)
+übernommen, zusammen in der .tex-Datei mit den Beispielzitierungen aus der
+Dokumentation. Die Originaldateien sind unter dem angegebenen Link zu finden.
+Dies ersetzt nicht biblatex-jura2, es soll zeigen, wie dieser biblatex-Style mit
+der Dokumentklasse hausarbeit-jura2 eingesetzt werden kann.
+
+
+
 ## Changelog
 
 ### [2.1.0] -- 2020-08-06
