@@ -24,52 +24,52 @@
 
 %% ändert die Einrückung für section, subsection und subsevensection, soll hier als Beispiel dienen, wie man Überschriftenzähler anpasst
 %% \makeatletter
-%% \renewcommand{\jubo@settocindents}{%
-%%   \if@chapterprefix%
-%%   \settowidth{\chapternumwidth}{\chaptername~999\chapterextra\space}% warum drei x 9? zweimal ist zu knapp
-%%   \else% chaptersuffix:
-%%   \settowidth{\chapternumwidth}{999.~\chaptername\chapterextra\space}%
-%%   \fi%
-%%   \settowidth{\sectionnumwidth}{} %
-%%   \settowidth{\subsectionnumwidth}{III)\ } %
-%%   \settowidth{\subsubsectionnumwidth}{8)\ }%
-%%   \settowidth{\subthreesectionnumwidth}{b)\ }%
-%%   \settowidth{\subfoursectionnumwidth}{bb)\ }%
-%%   \settowidth{\subfivesectionnumwidth}{(8)\ }%
-%%   \settowidth{\subsixsectionnumwidth}{(b)\ }%
-%%   \settowidth{\subsevensectionnumwidth}{(bb)\ } % geändert
-%%   \settowidth{\subeightsectionnumwidth}{$\alpha$)\ }%
-%%   \if@chapterprefix%
-%%   \setlength{\sectiontocindent}{\chapternumwidth}%
-%%   \else%
-%%   \settowidth{\@tempdima}{\bfseries 99.\space}%
-%%   \setlength{\sectiontocindent}{\@tempdima}%
-%%   \fi
-%%   \if@fixtocindent%
-%%   \setlength{\sectiontocindent}{\jb@defaulttocindent@length}% = 1.5em per default
-%%   \fi%
-%%   \setlength{\subsectiontocindent}{\sectiontocindent}%
-%%   \addtolength{\subsectiontocindent}{\sectionnumwidth}%
-%%   \setlength{\subsubsectiontocindent}{\subsectiontocindent}%
-%%   \addtolength{\subsubsectiontocindent}{\subsectionnumwidth}%
-%%   \setlength{\subthreesectiontocindent}{\subsubsectiontocindent}%
-%%   \addtolength{\subthreesectiontocindent}{\subsubsectionnumwidth}%
-%%   \setlength{\subfoursectiontocindent}{\subthreesectiontocindent}%
-%%   \addtolength{\subfoursectiontocindent}{\subthreesectionnumwidth}%
-%%   \setlength{\subfivesectiontocindent}{\subfoursectiontocindent}%
-%%   \addtolength{\subfivesectiontocindent}{\subfoursectionnumwidth}%
-%%   \setlength{\subsixsectiontocindent}{\subfivesectiontocindent}%
-%%   \addtolength{\subsixsectiontocindent}{\subfivesectionnumwidth}%
-%%   \setlength{\subsevensectiontocindent}{\subsixsectiontocindent}%
-%%   \addtolength{\subsevensectiontocindent}{\subsixsectionnumwidth}%
-%%   \setlength{\subeightsectiontocindent}{\subsevensectiontocindent}%
-%%   \addtolength{\subeightsectiontocindent}{\subsevensectionnumwidth}%
-%%   \setlength{\paragraphtocindent}{\subeightsectiontocindent}%
-%%   \addtolength{\paragraphtocindent}{\subeightsectionnumwidth}%
-%%   \setlength{\subparagraphtocindent}{\paragraphtocindent}%
-%%   \addtolength{\subparagraphtocindent}{\jb@defaulttocindent@length}%
-%% }
-%% \makeatother
+\renewcommand{\jubo@settocindents}{%
+  \if@chapterprefix%
+  \settowidth{\chapternumwidth}{\chaptername~999\chapterextra\space}% warum drei x 9? zweimal ist zu knapp
+  \else% chaptersuffix:
+  \settowidth{\chapternumwidth}{999.~\chaptername\chapterextra\space}%
+  \fi%
+  \settowidth{\sectionnumwidth}{} %
+  \settowidth{\subsectionnumwidth}{III)\ } %
+  \settowidth{\subsubsectionnumwidth}{8)\ }%
+  \settowidth{\subthreesectionnumwidth}{b)\ }%
+  \settowidth{\subfoursectionnumwidth}{bb)\ }%
+  \settowidth{\subfivesectionnumwidth}{(8)\ }%
+  \settowidth{\subsixsectionnumwidth}{(b)\ }%
+  \settowidth{\subsevensectionnumwidth}{(bb)\ } % geändert
+  \settowidth{\subeightsectionnumwidth}{$\alpha$)\ }%
+  \if@chapterprefix%
+  \setlength{\sectiontocindent}{\chapternumwidth}%
+  \else%
+  \settowidth{\@tempdima}{\bfseries 99.\space}%
+  \setlength{\sectiontocindent}{\@tempdima}%
+  \fi
+  \if@fixtocindent%
+  \setlength{\sectiontocindent}{\jb@defaulttocindent@length}% = 1.5em per default
+  \fi%
+  \setlength{\subsectiontocindent}{\sectiontocindent}%
+  \addtolength{\subsectiontocindent}{\sectionnumwidth}%
+  \setlength{\subsubsectiontocindent}{\subsectiontocindent}%
+  \addtolength{\subsubsectiontocindent}{\subsectionnumwidth}%
+  \setlength{\subthreesectiontocindent}{\subsubsectiontocindent}%
+  \addtolength{\subthreesectiontocindent}{\subsubsectionnumwidth}%
+  \setlength{\subfoursectiontocindent}{\subthreesectiontocindent}%
+  \addtolength{\subfoursectiontocindent}{\subthreesectionnumwidth}%
+  \setlength{\subfivesectiontocindent}{\subfoursectiontocindent}%
+  \addtolength{\subfivesectiontocindent}{\subfoursectionnumwidth}%
+  \setlength{\subsixsectiontocindent}{\subfivesectiontocindent}%
+  \addtolength{\subsixsectiontocindent}{\subfivesectionnumwidth}%
+  \setlength{\subsevensectiontocindent}{\subsixsectiontocindent}%
+  \addtolength{\subsevensectiontocindent}{\subsixsectionnumwidth}%
+  \setlength{\subeightsectiontocindent}{\subsevensectiontocindent}%
+  \addtolength{\subeightsectiontocindent}{\subsevensectionnumwidth}%
+  \setlength{\paragraphtocindent}{\subeightsectiontocindent}%
+  \addtolength{\paragraphtocindent}{\subeightsectionnumwidth}%
+  \setlength{\subparagraphtocindent}{\paragraphtocindent}%
+  \addtolength{\subparagraphtocindent}{\jb@defaulttocindent@length}%
+}
+\makeatother
 
 %% das setzt einen variablen Abstand zwischen Absätzen
 %% sollte nur genutzt werden, wenn folgende Funktion aktiviert ist:
