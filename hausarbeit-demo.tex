@@ -6,7 +6,7 @@
 \usepackage{titlesec} % zum Anpassen der Überschriftengröße/-dicke
 
 %% footnotes nun unter dem bottom float (sonst können sie manchmal zu weit oben sein)
-\usepackage[bottom]{footmisc}
+%%\usepackage[bottom]{footmisc}
 
 
 %% only use with pdftex and luatex
@@ -14,10 +14,31 @@
 \SetTracking{encoding=*,shape=sc}{50}%
 
 
+
 %% sets font for xetex and lualatex, only use with these engines
 \setmainfont{Arial} % normalerweise Times New Roman
-\renewcommand{\footnotesize}{\fontsize{10pt}{10pt}\selectfont} % normalerweise ist es 9pt; der erste Wert ist die Größe, der zweite der Abstand
-\setlength{\footskip}{15pt}
+\renewcommand{\footnotesize}{\fontsize{10pt}{12pt}\selectfont} % normalerweise ist es 9pt; der erste Wert ist die Größe, der zweite der Abstand
+%% \setlength{\footskip}{15pt}
+%%\setlength{\footnotesep}{12pt}
+%%\setlength{\skip\footins}{2pt}
+%%\hangfootparskip
+
+
+\usepackage{ragged2e}
+\usepackage[ragged,hang,bottom,multiple]{footmisc}
+
+%\usepackage{dblfnote}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\@makefntext
+  {\@makefnmark\hss}
+  {\hss\@makefnmark\space}
+  {}{}
+\makeatother
+
+%\setlength{\footnotesep}{0.1cm}
+
 
 %% Abstände und Schriftgröße und -dicke für Überschriften
 \titleformat{\chapter}
@@ -43,17 +64,17 @@
 
 %% setzt die Zähler für Überschriften (alle nötig, sofern Makro gesetzt wird, und nicht schon in Klasse geändert)
 %% drei geändert, alle eines nach unten verschoben
-\renewcommand{\thechapter}{}
-\renewcommand{\thesection}{\Alph{chapter})}
-\renewcommand{\thesubsection}{\Roman{section})}
-\renewcommand{\thesubsubsection}{\arabic{subsection})}
-\renewcommand{\thesubthreesection}{\alph{subsubsection})}
-\renewcommand{\thesubfoursection}{\alph{subthreesection}\alph{subthreesection})}
-\renewcommand{\thesubfivesection}{(\arabic{subfoursection})}
-\renewcommand{\thesubsixsection}{(\alph{subfivesection})}
-\renewcommand{\thesubsevensection}{(\alph{subsixsection}\alph{subsixsection})}
-\renewcommand{\thesubeightsection}{\boldmath\greek{subeightsection})}
-%% ändert die Einrückung für section, subsection und subsevensection, soll hier als Beispiel dienen, wie man Überschriftenzähler anpasst
+\renewcommand{\thechapter}{\Alph{chapter})} % geändert
+\renewcommand{\thesection}{\Roman{section})} % geändert
+\renewcommand{\thesubsection}{\arabic{subsection})}
+\renewcommand{\thesubsubsection}{\alph{subsubsection})}
+\renewcommand{\thesubthreesection}{\alph{subthreesection}\alph{subthreesection})}
+\renewcommand{\thesubfoursection}{(\arabic{subfoursection})}
+\renewcommand{\thesubfivesection}{(\alph{subfivesection})}
+\renewcommand{\thesubsixsection}{(\alph{subsixsection}\alph{subsixsection})}
+\renewcommand{\thesubsevensection}{\boldmath\greek{subsevensection})} %geändert
+
+%% ändert die Einrückung für section, subsection und subsevensection, soll hier als Beispiel dienen, wie man Überschriftenzähler anpa
 \makeatletter
 \renewcommand{\jubo@settocindents}{%
   \if@chapterprefix%
@@ -61,15 +82,15 @@
   \else% chaptersuffix:
   \settowidth{\chapternumwidth}{999.~\chaptername\chapterextra\space}%
   \fi%
-  \settowidth{\sectionnumwidth}{} %
-  \settowidth{\subsectionnumwidth}{III)\ } %
-  \settowidth{\subsubsectionnumwidth}{8)\ }%
-  \settowidth{\subthreesectionnumwidth}{b)\ }%
-  \settowidth{\subfoursectionnumwidth}{bb)\ }%
-  \settowidth{\subfivesectionnumwidth}{(8)\ }%
-  \settowidth{\subsixsectionnumwidth}{(b)\ }%
-  \settowidth{\subsevensectionnumwidth}{(bb)\ } % geändert
-  \settowidth{\subeightsectionnumwidth}{$\alpha$)\ }%
+  \settowidth{\sectionnumwidth}{III)\ } % geändert
+  \settowidth{\subsectionnumwidth}{8)\ } % geändert
+  \settowidth{\subsubsectionnumwidth}{b)\ }%
+  \settowidth{\subthreesectionnumwidth}{bb)\ }%
+  \settowidth{\subfoursectionnumwidth}{(8)\ }%
+  \settowidth{\subfivesectionnumwidth}{(b)\ }%
+  \settowidth{\subsixsectionnumwidth}{(bb)\ }%
+  \settowidth{\subsevensectionnumwidth}{$\alpha$)\ } % geändert
+  \settowidth{\subeightsectionnumwidth}{(iii)\ }%
   \if@chapterprefix%
   \setlength{\sectiontocindent}{\chapternumwidth}%
   \else%
@@ -211,15 +232,15 @@ Sechste Fußnote. \footcite[vgl.][517]{gehrlein:vollstreckung}
 
 Siebte Fußnote. \footcite[(Ellenberger)§~119 Rn.~4]{palandt}
 
-Achte Fußnote. \footnote{\cite[(Flechtner)§~2059 BGB Rn.~1]{erbr}; siehe auch \cite[(Kindler)Vorbem. §§~1--7 (Kaufmannsbegriff) Rn.~3]{ebjs1}.}
+Achte Fußnote. \footnote{\cite[(Flechtner)§~2059 BGB Rn.~1]{erbr}; siehe auch \cite[(Kindler)Vorbem. §§~1--7 (Kaufmannsbegriff) Rn.~3]{ebjs1}.\baselineskip12pt}
 
-Neunte Fußnote. \footnote{vgl. \cite[Schmidt-Aßmann][Art.~19 Abs.~4 Rn.~36]{maunzduerig}; a.\,A. \cite[Diemer][§~151 Rn.~2]{kkstpo}.}
+Neunte Fußnote. \footnote{vgl. \cite[Schmidt-Aßmann][Art.~19 Abs.~4 Rn.~36]{maunzduerig}; a.\,A. \cite[Diemer][§~151 Rn.~2]{kkstpo}.\baselineskip12pt}
 
 Zehnte Fußnote. \footcite[Matusche-Beckmann][§~5 Rn.~14]{hdbversr}
 
 Elfte Fußnote. \footcite[(Matusche-Beckmann)§~5 Rn.~14 (falsch zitiert)]{hdbversr}
 
-Zwölfte Fußnote. \footnote{\cite[(Bearbeiter)§~433 Rn.~23]{staudinger}; siehe auch \cite[(Bearbeiter)§~123 Rn.~12]{muekobgb}.}
+Zwölfte Fußnote. \footnote{\cite[(Bearbeiter)§~433 Rn.~23]{staudinger}; siehe auch \cite[(Bearbeiter)§~123 Rn.~12]{muekobgb}.\baselineskip12pt}
 
 Dreizehnte Fußnote. \footnote{Hentschel/\emph{König}/Dauer, § 1 StVG Rn. 1.}
 
@@ -255,8 +276,8 @@ Siebzehnte Fußnote. \footnote{\cite[56]{laack:infra}; siehe auch \cite[401]{bec
 \subsevensection{Ein Unterabschnitt}
 \blindtext
 
-\subeightsection{Ein Unterabschnitt}
-\blindtext
+%%\subeightsection{Ein Unterabschnitt}
+%%\blindtext
 
 \chapter{Noch ein Kapitel}
 Wie in Kapitel~\ref{chap:ErstesKapitel} auf S.~\pageref{chap:ErstesKapitel} \ldots

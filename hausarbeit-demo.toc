@@ -3,30 +3,28 @@
 \babel@toc {ngerman}{}
 \babel@toc {ngerman}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {}Ein erstes Kapitel}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {A)}Ein erstes Kapitel}{1}{chapter.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A)}Abschnitt}{1}{section.1.1}%
+\contentsline {section}{\numberline {I)}Abschnitt}{1}{section.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {I)}Ein Unterabschnitt}{2}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1)}Ein Unterabschnitt}{2}{subsection.1.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A)}Noch ein Abschnitt}{3}{section.1.2}%
+\contentsline {section}{\numberline {II)}Noch ein Abschnitt}{3}{section.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {II)}Ein Unterabschnitt}{3}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1)}Ein Unterabschnitt}{3}{subsection.1.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1)}Ein Unterabschnitt}{4}{subsubsection.1.2.1.1}%
+\contentsline {subsubsection}{\numberline {a)}Ein Unterabschnitt}{4}{subsubsection.1.2.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subthreesection}{\numberline {a)}Ein Unterabschnitt}{4}{subthreesection.1.2.1.1.1}%
+\contentsline {subthreesection}{\numberline {aa)}Ein Unterabschnitt}{4}{subthreesection.1.2.1.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subfoursection}{\numberline {aa)}Ein Unterabschnitt}{4}{subfoursection.1.2.1.1.1.1}%
+\contentsline {subfoursection}{\numberline {(1)}Ein Unterabschnitt}{4}{subfoursection.1.2.1.1.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subfivesection}{\numberline {(1)}Ein Unterabschnitt}{5}{subfivesection.1.2.1.1.1.1.1}%
+\contentsline {subfivesection}{\numberline {(a)}Ein Unterabschnitt}{5}{subfivesection.1.2.1.1.1.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsixsection}{\numberline {(a)}Ein Unterabschnitt}{5}{subsixsection.1.2.1.1.1.1.1.1}%
+\contentsline {subsixsection}{\numberline {(aa)}Ein Unterabschnitt}{5}{subsixsection.1.2.1.1.1.1.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsevensection}{\numberline {(aa)}Ein Unterabschnitt}{6}{subsevensection.1.2.1.1.1.1.1.1.1}%
+\contentsline {subsevensection}{\numberline {\boldmath $\alpha $)}Ein Unterabschnitt}{6}{subsevensection.1.2.1.1.1.1.1.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subeightsection}{\numberline {\boldmath $\alpha $)}Ein Unterabschnitt}{6}{subeightsection.1.2.1.1.1.1.1.1.1.1}%
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {}Noch ein Kapitel}{6}{chapter.2}%
+\contentsline {chapter}{\numberline {B)}Noch ein Kapitel}{6}{chapter.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Verzeichnis der exemplarisch verwendeten Literatur}{7}{chapter.2}%
