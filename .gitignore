@@ -1,2 +1,10 @@
 *.log
 *.aux
+*.bbl
+*.bcf
+*.bög
+*.dcs
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
