@@ -43,7 +43,7 @@
 
 %% setzt die Zähler für Überschriften (alle nötig, sofern Makro gesetzt wird, und nicht schon in Klasse geändert)
 %% drei geändert, alle eines nach unten verschoben
-\renewcommand{\thechapter}{\ }
+\renewcommand{\thechapter}{}
 \renewcommand{\thesection}{\Alph{chapter})}
 \renewcommand{\thesubsection}{\Roman{section})}
 \renewcommand{\thesubsubsection}{\arabic{subsection})}
@@ -53,23 +53,22 @@
 \renewcommand{\thesubsixsection}{(\alph{subfivesection})}
 \renewcommand{\thesubsevensection}{(\alph{subsixsection}\alph{subsixsection})}
 \renewcommand{\thesubeightsection}{\boldmath\greek{subeightsection})}
-
 %% ändert die Einrückung für section, subsection und subsevensection, soll hier als Beispiel dienen, wie man Überschriftenzähler anpasst
 \makeatletter
 \renewcommand{\jubo@settocindents}{%
   \if@chapterprefix%
-  \settowidth{\chapternumwidth}{\ }%\chaptername~999\chapterextra\space}% warum drei x 9? zweimal ist zu knapp
+  \settowidth{\chapternumwidth}{\chaptername~999\chapterextra\space}% warum drei x 9? zweimal ist zu knapp
   \else% chaptersuffix:
-  \settowidth{\chapternumwidth}{\ }%{999.~\chaptername\chapterextra\space}%
+  \settowidth{\chapternumwidth}{999.~\chaptername\chapterextra\space}%
   \fi%
-  \settowidth{\sectionnumwidth}{III)\ } %
-  \settowidth{\subsectionnumwidth}{8)\ } %
-  \settowidth{\subsubsectionnumwidth}{b)\ }%
-  \settowidth{\subthreesectionnumwidth}{bb)\ }%
-  \settowidth{\subfoursectionnumwidth}{(8)\ }%
-  \settowidth{\subfivesectionnumwidth}{(b)\ }%
-  \settowidth{\subsixsectionnumwidth}{(bb)\ }%
-  \settowidth{\subsevensectionnumwidth}{$\alpha$)\ } % geändert
+  \settowidth{\sectionnumwidth}{} %
+  \settowidth{\subsectionnumwidth}{III)\ } %
+  \settowidth{\subsubsectionnumwidth}{8)\ }%
+  \settowidth{\subthreesectionnumwidth}{b)\ }%
+  \settowidth{\subfoursectionnumwidth}{bb)\ }%
+  \settowidth{\subfivesectionnumwidth}{(8)\ }%
+  \settowidth{\subsixsectionnumwidth}{(b)\ }%
+  \settowidth{\subsevensectionnumwidth}{(bb)\ } % geändert
   \settowidth{\subeightsectionnumwidth}{$\alpha$)\ }%
   \if@chapterprefix%
   \setlength{\sectiontocindent}{\chapternumwidth}%

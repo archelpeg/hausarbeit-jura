@@ -3,7 +3,7 @@
 \babel@toc {ngerman}{}
 \babel@toc {ngerman}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {\ }Ein erstes Kapitel}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {}Ein erstes Kapitel}{1}{chapter.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {A)}Abschnitt}{1}{section.1.1}%
 \defcounter {refsection}{0}\relax 
@@ -27,6 +27,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subeightsection}{\numberline {\boldmath $\alpha $)}Ein Unterabschnitt}{6}{subeightsection.1.2.1.1.1.1.1.1.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {\ }Noch ein Kapitel}{6}{chapter.2}%
+\contentsline {chapter}{\numberline {}Noch ein Kapitel}{6}{chapter.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Verzeichnis der exemplarisch verwendeten Literatur}{7}{chapter.2}%

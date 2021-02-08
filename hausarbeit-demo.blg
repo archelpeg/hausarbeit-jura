@@ -1,15 +1,15 @@
-[0] Config.pm:311> INFO - This is Biber 2.16
+[1] Config.pm:311> INFO - This is Biber 2.16
 [1] Config.pm:314> INFO - Logfile is 'hausarbeit-demo.blg'
-[234] biber-MSWIN32:340> INFO - === 
-[304] Biber.pm:415> INFO - Reading 'hausarbeit-demo.bcf'
-[561] Biber.pm:952> INFO - Found 19 citekeys in bib section 0
-[593] Biber.pm:4340> INFO - Processing section 0
-[613] Biber.pm:4531> INFO - Looking for bibtex format file 'hausarbeit-demo.bib' for section 0
-[733] bibtex.pm:1689> INFO - LaTeX decoding ...
-[911] bibtex.pm:1494> INFO - Found BibTeX data source 'hausarbeit-demo.bib'
-[1176] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1177] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1177] Biber.pm:4168> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
-[1177] Biber.pm:4174> INFO - No sort tailoring available for locale 'de-DE'
-[1211] bbl.pm:654> INFO - Writing 'hausarbeit-demo.bbl' with encoding 'UTF-8'
-[1227] bbl.pm:757> INFO - Output to hausarbeit-demo.bbl
+[204] biber-MSWIN32:340> INFO - === 
+[280] Biber.pm:415> INFO - Reading 'hausarbeit-demo.bcf'
+[523] Biber.pm:952> INFO - Found 19 citekeys in bib section 0
+[553] Biber.pm:4340> INFO - Processing section 0
+[574] Biber.pm:4531> INFO - Looking for bibtex format file 'hausarbeit-demo.bib' for section 0
+[667] bibtex.pm:1689> INFO - LaTeX decoding ...
+[778] bibtex.pm:1494> INFO - Found BibTeX data source 'hausarbeit-demo.bib'
+[1047] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1047] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1048] Biber.pm:4168> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
+[1048] Biber.pm:4174> INFO - No sort tailoring available for locale 'de-DE'
+[1079] bbl.pm:654> INFO - Writing 'hausarbeit-demo.bbl' with encoding 'UTF-8'
+[1098] bbl.pm:757> INFO - Output to hausarbeit-demo.bbl
