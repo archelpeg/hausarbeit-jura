@@ -2,8 +2,8 @@
 \usepackage{blindtext}
 
 %% Optionen, falls man gewisse Standards aus der Klasse ändern möchte
-%% \usepackage{moreenum} % für griechische Zählung
-%% \usepackage{titlesec} % zum Anpassen der Überschriftengröße/-dicke
+\usepackage{moreenum} % für griechische Zählung
+\usepackage{titlesec} % zum Anpassen der Überschriftengröße/-dicke
 
 %% footnotes nun unter dem bottom float (sonst können sie manchmal zu weit oben sein)
 \usepackage[bottom]{footmisc}
@@ -19,88 +19,88 @@
   \renewcommand{\footnotesize}{\fontsize{10pt}{10pt}\selectfont} % normalerweise ist es 9pt; der erste Wert ist die Größe, der zweite der Abstand
 
 %% Abstände und Schriftgröße und -dicke für Überschriften
-%% \titleformat{\chapter}
-%%   {\normalfont\fontsize{12}{12}\bfseries}{\thechapter}{1em}{}
-%%   % \titlespacing*{\chapter}{0pt}{1em}{0.5em} % reduziert Abstand nach Kapiteln
-%% \titleformat{\section}
-%%   {\normalfont\fontsize{12}{12}\bfseries}{\thesection}{1em}{}
-%% \titleformat{\subsection}
-%%   {\normalfont\fontsize{12}{12}\bfseries}{\thesubsection}{1em}{}
-%% \titleformat{\subsubsection}
-%%   {\normalfont\fontsize{12}{12}\bfseries}{\thesubsubsection}{1em}{}
-%% \titleformat{\subthreesection}
-%%   {\normalfont\subthreefontsize{12}{12}\bfseries}{\thesubthreesection}{1em}{}
-%% \titleformat{\subfoursection}
-%%   {\normalfont\fontsize{12}{12}\bfseries}{\thesubfoursection}{1em}{}
-%% \titleformat{\subfivesection}
-%%   {\normalfont\fontsize{12}{12}\bfseries}{\thesubfivesection}{1em}{}
-%% \titleformat{\subsixsection}
-%%   {\normalfont\fontsize{12}{12}\bfseries}{\thesubsixsection}{1em}{}
-%% \titleformat{\subsevensection}
-%%   {\normalfont\fontsize{12}{12}\bfseries}{\thesubsevensection}{1em}{}
-%% subeightsection fehlt hier
+\titleformat{\chapter}
+  {\normalfont\fontsize{12}{12}\bfseries}{\thechapter}{1em}{}
+  % \titlespacing*{\chapter}{0pt}{1em}{0.5em} % reduziert Abstand nach Kapiteln
+\titleformat{\section}
+  {\normalfont\fontsize{12}{12}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\fontsize{12}{12}\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{12}{12}\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\subthreesection}
+  {\normalfont\subthreefontsize{12}{12}\bfseries}{\thesubthreesection}{1em}{}
+\titleformat{\subfoursection}
+  {\normalfont\fontsize{12}{12}\bfseries}{\thesubfoursection}{1em}{}
+\titleformat{\subfivesection}
+  {\normalfont\fontsize{12}{12}\bfseries}{\thesubfivesection}{1em}{}
+\titleformat{\subsixsection}
+  {\normalfont\fontsize{12}{12}\bfseries}{\thesubsixsection}{1em}{}
+\titleformat{\subsevensection}
+  {\normalfont\fontsize{12}{12}\bfseries}{\thesubsevensection}{1em}{}
+subeightsection fehlt hier
 
 %% setzt die Zähler für Überschriften (alle nötig, sofern Makro gesetzt wird, und nicht schon in Klasse geändert)
 %% drei geändert, alle eines nach unten verschoben
-%% \renewcommand{\thechapter}{}
-%% \renewcommand{\thesection}{\Alph{chapter})}
-%% \renewcommand{\thesubsection}{\Roman{section})}
-%% \renewcommand{\thesubsubsection}{\arabic{subsection})}
-%% \renewcommand{\thesubthreesection}{\alph{subsubsection})}
-%% \renewcommand{\thesubfoursection}{\alph{subthreesection}\alph{subthreesection})}
-%% \renewcommand{\thesubfivesection}{(\arabic{subfoursection})}
-%% \renewcommand{\thesubsixsection}{(\alph{subfivesection})}
-%% \renewcommand{\thesubsevensection}{(\alph{subsixsection}\alph{subsixsection})}
-%% \renewcommand{\thesubeightsection}{\boldmath\greek{subeightsection})}
+\renewcommand{\thechapter}{}
+\renewcommand{\thesection}{\Alph{chapter})}
+\renewcommand{\thesubsection}{\Roman{section})}
+\renewcommand{\thesubsubsection}{\arabic{subsection})}
+\renewcommand{\thesubthreesection}{\alph{subsubsection})}
+\renewcommand{\thesubfoursection}{\alph{subthreesection}\alph{subthreesection})}
+\renewcommand{\thesubfivesection}{(\arabic{subfoursection})}
+\renewcommand{\thesubsixsection}{(\alph{subfivesection})}
+\renewcommand{\thesubsevensection}{(\alph{subsixsection}\alph{subsixsection})}
+\renewcommand{\thesubeightsection}{\boldmath\greek{subeightsection})}
 
 %% ändert die Einrückung für section, subsection und subsevensection, soll hier als Beispiel dienen, wie man Überschriftenzähler anpasst
-%% \makeatletter
-%% \renewcommand{\jubo@settocindents}{%
-%%   \if@chapterprefix%
-%%   \settowidth{\chapternumwidth}{\chaptername~999\chapterextra\space}% warum drei x 9? zweimal ist zu knapp
-%%   \else% chaptersuffix:
-%%   \settowidth{\chapternumwidth}{999.~\chaptername\chapterextra\space}%
-%%   \fi%
-%%   \settowidth{\sectionnumwidth}{} %
-%%   \settowidth{\subsectionnumwidth}{III)\ } %
-%%   \settowidth{\subsubsectionnumwidth}{8)\ }%
-%%   \settowidth{\subthreesectionnumwidth}{b)\ }%
-%%   \settowidth{\subfoursectionnumwidth}{bb)\ }%
-%%   \settowidth{\subfivesectionnumwidth}{(8)\ }%
-%%   \settowidth{\subsixsectionnumwidth}{(b)\ }%
-%%   \settowidth{\subsevensectionnumwidth}{(bb)\ } % geändert
-%%   \settowidth{\subeightsectionnumwidth}{$\alpha$)\ }%
-%%   \if@chapterprefix%
-%%   \setlength{\sectiontocindent}{\chapternumwidth}%
-%%   \else%
-%%   \settowidth{\@tempdima}{\bfseries 99.\space}%
-%%   \setlength{\sectiontocindent}{\@tempdima}%
-%%   \fi
-%%   \if@fixtocindent%
-%%   \setlength{\sectiontocindent}{\jb@defaulttocindent@length}% = 1.5em per default
-%%   \fi%
-%%   \setlength{\subsectiontocindent}{\sectiontocindent}%
-%%   \addtolength{\subsectiontocindent}{\sectionnumwidth}%
-%%   \setlength{\subsubsectiontocindent}{\subsectiontocindent}%
-%%   \addtolength{\subsubsectiontocindent}{\subsectionnumwidth}%
-%%   \setlength{\subthreesectiontocindent}{\subsubsectiontocindent}%
-%%   \addtolength{\subthreesectiontocindent}{\subsubsectionnumwidth}%
-%%   \setlength{\subfoursectiontocindent}{\subthreesectiontocindent}%
-%%   \addtolength{\subfoursectiontocindent}{\subthreesectionnumwidth}%
-%%   \setlength{\subfivesectiontocindent}{\subfoursectiontocindent}%
-%%   \addtolength{\subfivesectiontocindent}{\subfoursectionnumwidth}%
-%%   \setlength{\subsixsectiontocindent}{\subfivesectiontocindent}%
-%%   \addtolength{\subsixsectiontocindent}{\subfivesectionnumwidth}%
-%%   \setlength{\subsevensectiontocindent}{\subsixsectiontocindent}%
-%%   \addtolength{\subsevensectiontocindent}{\subsixsectionnumwidth}%
-%%   \setlength{\subeightsectiontocindent}{\subsevensectiontocindent}%
-%%   \addtolength{\subeightsectiontocindent}{\subsevensectionnumwidth}%
-%%   \setlength{\paragraphtocindent}{\subeightsectiontocindent}%
-%%   \addtolength{\paragraphtocindent}{\subeightsectionnumwidth}%
-%%   \setlength{\subparagraphtocindent}{\paragraphtocindent}%
-%%   \addtolength{\subparagraphtocindent}{\jb@defaulttocindent@length}%
-%% }
-%% \makeatother
+\makeatletter
+\renewcommand{\jubo@settocindents}{%
+  \if@chapterprefix%
+  \settowidth{\chapternumwidth}{\chaptername~999\chapterextra\space}% warum drei x 9? zweimal ist zu knapp
+  \else% chaptersuffix:
+  \settowidth{\chapternumwidth}{999.~\chaptername\chapterextra\space}%
+  \fi%
+  \settowidth{\sectionnumwidth}{} %
+  \settowidth{\subsectionnumwidth}{III)\ } %
+  \settowidth{\subsubsectionnumwidth}{8)\ }%
+  \settowidth{\subthreesectionnumwidth}{b)\ }%
+  \settowidth{\subfoursectionnumwidth}{bb)\ }%
+  \settowidth{\subfivesectionnumwidth}{(8)\ }%
+  \settowidth{\subsixsectionnumwidth}{(b)\ }%
+  \settowidth{\subsevensectionnumwidth}{(bb)\ } % geändert
+  \settowidth{\subeightsectionnumwidth}{$\alpha$)\ }%
+  \if@chapterprefix%
+  \setlength{\sectiontocindent}{\chapternumwidth}%
+  \else%
+  \settowidth{\@tempdima}{\bfseries 99.\space}%
+  \setlength{\sectiontocindent}{\@tempdima}%
+  \fi
+  \if@fixtocindent%
+  \setlength{\sectiontocindent}{\jb@defaulttocindent@length}% = 1.5em per default
+  \fi%
+  \setlength{\subsectiontocindent}{\sectiontocindent}%
+  \addtolength{\subsectiontocindent}{\sectionnumwidth}%
+  \setlength{\subsubsectiontocindent}{\subsectiontocindent}%
+  \addtolength{\subsubsectiontocindent}{\subsectionnumwidth}%
+  \setlength{\subthreesectiontocindent}{\subsubsectiontocindent}%
+  \addtolength{\subthreesectiontocindent}{\subsubsectionnumwidth}%
+  \setlength{\subfoursectiontocindent}{\subthreesectiontocindent}%
+  \addtolength{\subfoursectiontocindent}{\subthreesectionnumwidth}%
+  \setlength{\subfivesectiontocindent}{\subfoursectiontocindent}%
+  \addtolength{\subfivesectiontocindent}{\subfoursectionnumwidth}%
+  \setlength{\subsixsectiontocindent}{\subfivesectiontocindent}%
+  \addtolength{\subsixsectiontocindent}{\subfivesectionnumwidth}%
+  \setlength{\subsevensectiontocindent}{\subsixsectiontocindent}%
+  \addtolength{\subsevensectiontocindent}{\subsixsectionnumwidth}%
+  \setlength{\subeightsectiontocindent}{\subsevensectiontocindent}%
+  \addtolength{\subeightsectiontocindent}{\subsevensectionnumwidth}%
+  \setlength{\paragraphtocindent}{\subeightsectiontocindent}%
+  \addtolength{\paragraphtocindent}{\subeightsectionnumwidth}%
+  \setlength{\subparagraphtocindent}{\paragraphtocindent}%
+  \addtolength{\subparagraphtocindent}{\jb@defaulttocindent@length}%
+}
+\makeatother
 
 %% das setzt einen variablen Abstand zwischen Absätzen
 %% \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
@@ -109,28 +109,28 @@
 %% \setlength\parindent{0pt}
 
 %% legt den Rand für den Hauptteil fest
-%% \setpgmain{left=2cm,right=5cm,top=2cm,bottom=2cm,footskip=0.5cm,marginparwidth=5cm,verbose}
+\setpgmain{left=2cm,right=5cm,top=2cm,bottom=2cm,footskip=0.5cm,marginparwidth=5cm,verbose}
 
 %% legt den Rand für den Vorspann fest;
-%% \setpgfront{left=3.5cm,right=2cm,top=2cm,bottom=2cm,footskip=0.5cm,marginparwidth=5cm,verbose}
+\setpgfront{left=3.5cm,right=2cm,top=2cm,bottom=2cm,footskip=0.5cm,marginparwidth=5cm,verbose}
 
 %% ermöglicht Zeilenabstand von Word (nur im Hauptteil, nicht in den Fußnoten)
 %% https://tex.stackexchange.com/a/355610
-%% \makeatletter
-%% \renewcommand{\onehalfspacing}{%
-%%   \normalsize
-%%   \ifthenelse{\@ptsize = 0}% 10pt
-%%     {\renewcommand{\baselinestretch}{1.25}}%
-%%     {}
-%%   \ifthenelse{\@ptsize = 1}% 11pt
-%%     {\renewcommand{\baselinestretch}{1.21}}%
-%%     {}
-%%   \ifthenelse{\@ptsize = 2}% 12pt
-%%     {\renewcommand{\baselinestretch}{1.5}}% normalerweise 1.24, das gibt jetzt den verkappten Zeilenabstand von Word.
-%%     {}
-%%   \normalsize
-%% }
-%% \makeatother
+\makeatletter
+\renewcommand{\onehalfspacing}{%
+  \normalsize
+  \ifthenelse{\@ptsize = 0}% 10pt
+    {\renewcommand{\baselinestretch}{1.25}}%
+    {}
+  \ifthenelse{\@ptsize = 1}% 11pt
+    {\renewcommand{\baselinestretch}{1.21}}%
+    {}
+  \ifthenelse{\@ptsize = 2}% 12pt
+    {\renewcommand{\baselinestretch}{1.5}}% normalerweise 1.24, das gibt jetzt den verkappten Zeilenabstand von Word.
+    {}
+  \normalsize
+}
+\makeatother
 
 %% für Verlinkung in PDF
 \usepackage[hidelinks]{hyperref}
