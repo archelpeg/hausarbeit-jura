@@ -1,9 +1,115 @@
-%% !TeX program = pdflatex
-%% !TeX TXS-program:bibliography = txs:///bibtex8
 \documentclass{hausarbeit-jura}
 \usepackage{blindtext}
 
+%% Optionen, falls man gewisse Standards aus der Klasse ändern möchte
+
+%% footnotes nun unter dem bottom float (sonst können sie manchmal zu weit oben sein)
+\usepackage[bottom]{footmisc}
+
+%% sets microtype for lualatex and pdflatex
+\ifluatex, \ifLuaTeX, \ifPDFTeX, \ifpdftex
+  \usepackage[final,tracking=smallcaps,expansion=alltext,protrusion=true]{microtype}%
+  \SetTracking{encoding=*,shape=sc}{50}%
+
+%% sets font for xetex and lualatex
+\ifXeTeX, \ifxetex, \ifluatex, \ifLuaTeX
+  \setmainfont{Arial} % normalerweise Times New Roman
+  \renewcommand{\footnotesize}{\fontsize{10pt}{10pt}\selectfont} % normalerweise ist es 9pt; der erste Wert ist die Größe, der zweite der Abstand
+
+%% Abstände und Schriftgröße und -dicke für Überschriften
+%% subeightsection fehlt hier
+
+%% setzt die Zähler für Überschriften (alle nötig, sofern Makro gesetzt wird, und nicht schon in Klasse geändert)
+%% drei geändert, alle eines nach unten verschoben
+
+%% ändert die Einrückung für section, subsection und subsevensection, soll hier als Beispiel dienen, wie man Überschriftenzähler anpasst
+%% \makeatletter
+%% \renewcommand{\jubo@settocindents}{%
+%%   \if@chapterprefix%
+%%   \settowidth{\chapternumwidth}{\chaptername~999\chapterextra\space}% warum drei x 9? zweimal ist zu knapp
+%%   \else% chaptersuffix:
+%%   \settowidth{\chapternumwidth}{999.~\chaptername\chapterextra\space}%
+%%   \fi%
+%%   \settowidth{\sectionnumwidth}{} %
+%%   \settowidth{\subsectionnumwidth}{III)\ } %
+%%   \settowidth{\subsubsectionnumwidth}{8)\ }%
+%%   \settowidth{\subthreesectionnumwidth}{b)\ }%
+%%   \settowidth{\subfoursectionnumwidth}{bb)\ }%
+%%   \settowidth{\subfivesectionnumwidth}{(8)\ }%
+%%   \settowidth{\subsixsectionnumwidth}{(b)\ }%
+%%   \settowidth{\subsevensectionnumwidth}{(bb)\ } % geändert
+%%   \settowidth{\subeightsectionnumwidth}{$\alpha$)\ }%
+%%   \if@chapterprefix%
+%%   \setlength{\sectiontocindent}{\chapternumwidth}%
+%%   \else%
+%%   \settowidth{\@tempdima}{\bfseries 99.\space}%
+%%   \setlength{\sectiontocindent}{\@tempdima}%
+%%   \fi
+%%   \if@fixtocindent%
+%%   \setlength{\sectiontocindent}{\jb@defaulttocindent@length}% = 1.5em per default
+%%   \fi%
+%%   \setlength{\subsectiontocindent}{\sectiontocindent}%
+%%   \addtolength{\subsectiontocindent}{\sectionnumwidth}%
+%%   \setlength{\subsubsectiontocindent}{\subsectiontocindent}%
+%%   \addtolength{\subsubsectiontocindent}{\subsectionnumwidth}%
+%%   \setlength{\subthreesectiontocindent}{\subsubsectiontocindent}%
+%%   \addtolength{\subthreesectiontocindent}{\subsubsectionnumwidth}%
+%%   \setlength{\subfoursectiontocindent}{\subthreesectiontocindent}%
+%%   \addtolength{\subfoursectiontocindent}{\subthreesectionnumwidth}%
+%%   \setlength{\subfivesectiontocindent}{\subfoursectiontocindent}%
+%%   \addtolength{\subfivesectiontocindent}{\subfoursectionnumwidth}%
+%%   \setlength{\subsixsectiontocindent}{\subfivesectiontocindent}%
+%%   \addtolength{\subsixsectiontocindent}{\subfivesectionnumwidth}%
+%%   \setlength{\subsevensectiontocindent}{\subsixsectiontocindent}%
+%%   \addtolength{\subsevensectiontocindent}{\subsixsectionnumwidth}%
+%%   \setlength{\subeightsectiontocindent}{\subsevensectiontocindent}%
+%%   \addtolength{\subeightsectiontocindent}{\subsevensectionnumwidth}%
+%%   \setlength{\paragraphtocindent}{\subeightsectiontocindent}%
+%%   \addtolength{\paragraphtocindent}{\subeightsectionnumwidth}%
+%%   \setlength{\subparagraphtocindent}{\paragraphtocindent}%
+%%   \addtolength{\subparagraphtocindent}{\jb@defaulttocindent@length}%
+%% }
+%% \makeatother
+
+%% das setzt einen variablen Abstand zwischen Absätzen
+%% sollte nur genutzt werden, wenn folgende Funktion aktiviert ist:
+%% deaktiviere indent überall
+
+%% legt den Rand für den Hauptteil fest
+
+%% legt den Rand für den Vorspann fest;
+
+%% ermöglicht Zeilenabstand von Word (nur im Hauptteil, nicht in den Fußnoten)
+%% https://tex.stackexchange.com/a/355610
+
+%% für Verlinkung in PDF
+\usepackage[hidelinks]{hyperref}
+
+%% setzt biblatex als bib-Klasse mit biblatex-jura2 als Style
+\usepackage[%
+  style     = jura2,%
+  backend   = biber,%
+  sorting   = nty,%
+  sortcites = true,%
+  maxnames  = 4,%
+  minnames  = 4,%
+  articlein = false,%
+  %innamebeforetitle = true,
+  date      = comp,%short
+  urldate   = comp,
+  dateabbrev = true,
+  useprefix = true,%
+  isbn      = false,%
+  doi       = true,%
+  backref   = false,%
+  abbreviate = true,%
+]{biblatex}
+\addbibresource{demo2.bib}
+
 \begin{document}
+
+%% optional
+
 %%% Vorspann mit Titel, Sachverhalt und den Verzeichnissen
 \title{Hausarbeit}
 \subtitle{Übung für Anfänger im öffentlichen Recht}
@@ -15,15 +121,54 @@
 \maketitle
 
 \tableofcontents %Inhaltsverzeichnis
-\bibliography{hausarbeit-demo}
+
+%% Bibliographie auf neuer Seite, leicht abgeändert übernommen aus biblatex-jura2
+%% kann hier gesetzt werden, oder am Ende
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% optional
+
 \chapter{Ein erstes Kapitel}\label{chap:ErstesKapitel}
-\TODO{Da fehlt noch was!}
 
 \section{Abschnitt}
 \blindtext[4]
 
-Eine erste Fußnote\footnote{Dies ist eine Fußnote mit Zitat \cite[348, 349]{hau98}.}
+%% Von dem Stylepaket biblatex-jura2 übernommen, für Erklärungen in dessen Dokumentation schauen.
+%% https://ctan.org/pkg/biblatex-jura2
+
+Erste Fußnote.\footcite[33]{larenz:methoden}
+
+Zweite Fußnote. \footcite[§~7 Rn.~7]{maurer:allgverwr}
+
+Dritte Fußnote. \footcite[Rn.~204]{medicus:br}
+
+Vierte Fußnote. \footcite{stamm:verzinsung}
+
+Fünfte Fußnote. \footcite[3]{stamm:zweiter}
+
+Sechste Fußnote. \footcite[vgl.][517]{gehrlein:vollstreckung}
+
+Siebte Fußnote. \footcite[(Ellenberger)§~119 Rn.~4]{palandt}
+
+Achte Fußnote. \footnote{\cite[(Flechtner)§~2059 BGB Rn.~1]{erbr}; siehe auch \cite[(Kindler)Vorbem. §§~1--7 (Kaufmannsbegriff) Rn.~3]{ebjs1}.}
+
+Neunte Fußnote. \footnote{vgl. \cite[Schmidt-Aßmann][Art.~19 Abs.~4 Rn.~36]{maunzduerig}; a.\,A. \cite[Diemer][§~151 Rn.~2]{kkstpo}.}
+
+Zehnte Fußnote. \footcite[Matusche-Beckmann][§~5 Rn.~14]{hdbversr}
+
+Elfte Fußnote. \footcite[(Matusche-Beckmann)§~5 Rn.~14 (falsch zitiert)]{hdbversr}
+
+Zwölfte Fußnote. \footnote{\cite[(Bearbeiter)§~433 Rn.~23]{staudinger}; siehe auch \cite[(Bearbeiter)§~123 Rn.~12]{muekobgb}.}
+
+Dreizehnte Fußnote. \footnote{Hentschel/\emph{König}/Dauer, § 1 StVG Rn. 1.}
+
+Vierzehnte Fußnote. \footcite[Rn. 3]{viiizr255.17}
+
+Fünfzehnte Fußnote. \footcite[Rn. 15]{1str346.18}
+
+Sechsehnte Fußnote. \footcite[3535]{1str346.18.2}
+
+Siebzehnte Fußnote. \footnote{\cite[56]{laack:infra}; siehe auch \cite[401]{beckemper:unvernunft}.}
 
 \section{Noch ein Abschnitt}
 \blindtext
@@ -56,5 +201,12 @@ Eine erste Fußnote\footnote{Dies ist eine Fußnote mit Zitat \cite[348, 349]{ha
 Wie in Kapitel~\ref{chap:ErstesKapitel} auf S.~\pageref{chap:ErstesKapitel} \ldots
 
 Wie in Kapitel~\xref{chap:ErstesKapitel} \ldots
+
+%% Bibliographie am Ende auf neuer Seite
+%% falls oben gesetzt, dann hier auskommentieren
+\newpage
+\sloppy
+\addcontentsline{toc}{chapter}{Verzeichnis der exemplarisch verwendeten Literatur} % fügt Lit-verz. ins Inhaltsverzeichnis ein
+\printbibliography[nottype=jurisdiction]
 
 \end{document}

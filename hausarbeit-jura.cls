@@ -109,7 +109,6 @@ universities (ao, ms)]
    \setmainfont{Times New Roman}
 \fi%
 \RequirePackage{babel}
-\RequirePackage{indentfirst}
 \RequirePackage{geometry}
 \if@headline
    \geometry{left=7cm,right=1cm,top=1cm,bottom=1.5cm,footskip=0.5cm,marginparwidth=5cm,verbose,includehead}%
@@ -123,8 +122,6 @@ universities (ao, ms)]
 \RequirePackage[autostyle]{csquotes}
 \defineshorthand{"`}{\openautoquote}
 \defineshorthand{"'}{\closeautoquote}
-\RequirePackage[final,tracking=smallcaps,expansion=alltext,protrusion=true]{microtype}%
-\SetTracking{encoding=*,shape=sc}{50}%
 \if@headline
    \renewcommand{\SetJuboPagestyle}{%
       \pagestyle{fancy}%
@@ -150,41 +147,7 @@ universities (ao, ms)]
       \fancyhead{}}%
 \fi%
 
-\RequirePackage{jurabib}% Bibliografie
-\jbedseplikecite% Die Separation der Herausgeber im Literaturverzeichnis entspricht der im Zitat
-\renewcommand*{\bibatsep}{,}% Komma nach dem Titel des Buches oder des Artikels
-\renewcommand*{\jbaensep}{,}% Komma nach der Auflage, vor dem Jahr
-\renewcommand*{\bibbdsep}{}% kein Komma nach Ort und vor dem Jahr
-\renewcommand*{\bibjtsep}{}% Komma vor dem Namen der Zeitschrift
-\renewcommand*{\bibbtsep}{in:~}% für in collection, Komma vor dem Titel
-\renewcommand*{\ajtsep}{}% Abstand nach dem Namen der Zeitschrift
-\renewcommand*{\artnumberformat}{\unskip,\space H.~}% bei den Zeitschriften statt Nr. H.
-\if@superscriptedition
-   \jurabibsetup{%
-      annotatorfirstsep=in,%
-      bibformat=tabular,%
-      titleformat={all,commasep},% Komma vor dem Titel
-      commabeforerest,% Komma vor der Seitenangabe in der Fußnote
-      superscriptedition=all,% Ausgabe oben
-      howcited=all,%
-      authorformat=dynamic%
-   }%
-\else
-   \jurabibsetup{%
-      annotatorfirstsep=in,%
-      bibformat=tabular,%
-      titleformat={all,commasep}, %Komma vor dem Titel
-      commabeforerest, %Komma vor der Seitenangabe in der Fußnote
-      howcited=all,%
-      authorformat=dynamic%
-      }%
-\fi%
-
-\bibliographystyle{jurabib}
-\bibtotoc
-
-\renewcommand*{\bibleftcolumn}{\textwidth/3}%
-\renewcommand*{\bibrightcolumn}{\textwidth-\bibleftcolumn-0.5cm}%
+%% kein Laden mehr von Jurabib, damit in der tex-Datei biblatex-jura2 mit biber genutzt werden kann
 
 \if@varioref%
    \usepackage[ngerman]{varioref}
@@ -362,7 +325,7 @@ universities (ao, ms)]
   \chapterlevel%
   \if@headline\else\jubo@thispagestyle@empty\fi%
   \global\@topnum\z@%
-  \@afterindentfalse
+  % \@afterindentfalse % auskommentiert, weil oben \indentfirst auskommentiert
   \secdef\@chapter\@schapter%
 }
 
