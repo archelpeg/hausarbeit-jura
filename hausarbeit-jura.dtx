@@ -1571,23 +1571,17 @@ universities (ao, ms)]
 \usepackage[bottom]{footmisc}
 
 
-%% Nur verwenden, wenn mit \hologo{pdfLaTeX} oder \hologo{LuaLaTeX} kompiliert wird, da 
-%% \hologo{XeLaTeX} microtype nicht unterstützt.
-%% (Es wäre schöner, das hier mit if/then umzusetzen.)
-\usepackage[final,tracking=smallcaps,expansion=alltext,protrusion=true]{microtype}%
-\SetTracking{encoding=*,shape=sc}{50}%
+
+%% sets microtype for lualatex and pdflatex
+\ifluatex, \ifLuaTeX, \ifPDFTeX, \ifpdftex
+  \usepackage[final,tracking=smallcaps,expansion=alltext,protrusion=true]{microtype}%
+  \SetTracking{encoding=*,shape=sc}{50}%
 
 
-
-
-
-
-%% kann man setzen, falls noch nicht in Klasse geändert
-%% Nur verwenden, wenn mit \hologo{LuaLaTeX} oder \hologo{XeLaTeX} kompiliert wird, da 
-%% \hologo{pdfLaTeX} nur einige wenige Schriftarten unterstützt.
-%% https://en.wikibooks.org/wiki/LaTeX/Fonts#Changing_fonts_in_latex_and_pdflatex
-% \setmainfont{Arial} % normalerweise Times New Roman
-% \renewcommand{\footnotesize}{\fontsize{10pt}{10pt}\selectfont} % normalerweise ist es 9pt; der erste Wert ist die Größe, der zweite der Abstand
+%% sets font for xetex and lualatex
+\ifXeTeX, \ifxetex, \ifluatex, \ifLuaTeX
+  \setmainfont{Arial} % normalerweise Times New Roman
+  \renewcommand{\footnotesize}{\fontsize{10pt}{10pt}\selectfont} % normalerweise ist es 9pt; der erste Wert ist die Größe, der zweite der Abstand
 
 
 %% Abstände und Schriftgröße und -dicke für Überschriften
@@ -1616,16 +1610,18 @@ universities (ao, ms)]
 
 
 %% setzt die Zähler für Überschriften (alle nötig, sofern Makro gesetzt wird, und nicht schon in Klasse geändert)
-% \renewcommand{\thechapter}{\Alph{chapter})} % geändert
-% \renewcommand{\thesection}{\Roman{section})} % geändert
-% \renewcommand{\thesubsection}{\arabic{subsection})}
-% \renewcommand{\thesubsubsection}{\alph{subsubsection})}
-% \renewcommand{\thesubthreesection}{\alph{subthreesection}\alph{subthreesection})}
-% \renewcommand{\thesubfoursection}{(\arabic{subfoursection})}
-% \renewcommand{\thesubfivesection}{(\alph{subfivesection})}
-% \renewcommand{\thesubsixsection}{(\alph{subsixsection}\alph{subsixsection})}
-% \renewcommand{\thesubsevensection}{\boldmath\greek{subsevensection})} %geändert
-%% subeightsection fehlt hier
+%% drei geändert, alle eines nach unten verschoben
+% \renewcommand{\thechapter}{}
+% \renewcommand{\thesection}{\Alph{chapter})}
+% \renewcommand{\thesubsection}{\Roman{section})}
+% \renewcommand{\thesubsubsection}{\arabic{subsection})}
+% \renewcommand{\thesubthreesection}{\alph{subsubsection})}
+% \renewcommand{\thesubfoursection}{\alph{subthreesection}\alph{subthreesection})}
+% \renewcommand{\thesubfivesection}{(\arabic{subfoursection})}
+% \renewcommand{\thesubsixsection}{(\alph{subfivesection})}
+% \renewcommand{\thesubsevensection}{(\alph{subsixsection}\alph{subsixsection})}
+% \renewcommand{\thesubeightsection}{\boldmath\greek{subeightsection})}
+
 
 
 %% ändert die Einrückung für section, subsection und subsevensection, soll hier als Beispiel dienen, wie man Überschriftenzähler anpasst
@@ -1636,15 +1632,15 @@ universities (ao, ms)]
 %%   \else% chaptersuffix:
 %%   \settowidth{\chapternumwidth}{999.~\chaptername\chapterextra\space}%
 %%   \fi%
-%%   \settowidth{\sectionnumwidth}{III)\ } % geändert
-%%   \settowidth{\subsectionnumwidth}{8)\ } % geändert
-%%   \settowidth{\subsubsectionnumwidth}{b)\ }%
-%%   \settowidth{\subthreesectionnumwidth}{bb)\ }%
-%%   \settowidth{\subfoursectionnumwidth}{(8)\ }%
-%%   \settowidth{\subfivesectionnumwidth}{(b)\ }%
-%%   \settowidth{\subsixsectionnumwidth}{(bb)\ }%
-%%   \settowidth{\subsevensectionnumwidth}{$\alpha$)\ } % geändert
-%%   \settowidth{\subeightsectionnumwidth}{(iii)\ }%
+%%   \settowidth{\sectionnumwidth}{} %
+%%   \settowidth{\subsectionnumwidth}{III)\ } %
+%%   \settowidth{\subsubsectionnumwidth}{8)\ }%
+%%   \settowidth{\subthreesectionnumwidth}{b)\ }%
+%%   \settowidth{\subfoursectionnumwidth}{bb)\ }%
+%%   \settowidth{\subfivesectionnumwidth}{(8)\ }%
+%%   \settowidth{\subsixsectionnumwidth}{(b)\ }%
+%%   \settowidth{\subsevensectionnumwidth}{(bb)\ } % geändert
+%%   \settowidth{\subeightsectionnumwidth}{$\alpha$)\ }%
 %%   \if@chapterprefix%
 %%   \setlength{\sectiontocindent}{\chapternumwidth}%
 %%   \else%
@@ -1775,7 +1771,7 @@ universities (ao, ms)]
 
 % ab hier Hauptteil
 \chapter{Ein erstes Kapitel}\label{chap:ErstesKapitel}
-\TODO{Da fehlt noch was!}
+% \TODO{Da fehlt noch was!}
 
 \section{Abschnitt}
 \blindtext[4]
