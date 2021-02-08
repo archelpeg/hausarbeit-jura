@@ -2,7 +2,7 @@
 *.aux
 *.bbl
 *.bcf
-*.bög
+*.blg
 *.dcs
 *.out
 *.run.xml
